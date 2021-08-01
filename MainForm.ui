@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>804</width>
+    <height>465</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>40</y>
+      <width>111</width>
+      <height>351</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QPushButton" name="btn_extract_feature">
+       <property name="text">
+        <string>提取特征</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_show_feature">
+       <property name="text">
+        <string>展示特征</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_train_model">
+       <property name="text">
+        <string>训练模型</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_pre_single">
+       <property name="text">
+        <string>预测文件</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="qlabel_background">
+    <property name="geometry">
+     <rect>
+      <x>-20</x>
+      <y>-40</y>
+      <width>881</width>
+      <height>521</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>loading...</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="qlabel_picture">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>60</y>
+      <width>231</width>
+      <height>321</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>loading...</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="qTE_show_mess">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>70</y>
+      <width>191</width>
+      <height>291</height>
+     </rect>
+    </property>
+    <property name="html">
+     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The &lt;span style=&quot; color:#cc0000;&quot;&gt;message&lt;/span&gt; of this system will be shown here!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <zorder>qlabel_background</zorder>
+   <zorder>verticalLayoutWidget</zorder>
+   <zorder>qlabel_picture</zorder>
+   <zorder>qTE_show_mess</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>804</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>菜单</string>
+    </property>
+    <addaction name="action"/>
+   </widget>
+   <addaction name="menu"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="action">
+   <property name="text">
+    <string>退出</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btn_train_model</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>train_model()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>125</x>
+     <y>271</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>152</x>
+     <y>171</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_extract_feature</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>extract_feature()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>124</x>
+     <y>118</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>148</x>
+     <y>37</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_pre_single</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>pre_single()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>120</x>
+     <y>352</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>149</x>
+     <y>277</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_show_feature</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>show_feature()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>124</x>
+     <y>199</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>364</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>extract_feature()</slot>
+  <slot>train_model()</slot>
+  <slot>pre_single()</slot>
+  <slot>show_feature()</slot>
+ </slots>
+</ui>
